@@ -31,8 +31,7 @@ const Button: React.FC<ButtonProps> = ({
   
   return (
     <button
-      className={`p-4 text-lg font-semibold rounded-lg transition-all duration-200 
-                 shadow hover:shadow-md active:shadow-none
+      className={`w-12 h-12 flex items-center justify-center rounded-lg font-semibold transition-all duration-200 shadow hover:shadow-md active:shadow-none
                  ${getVariantClass(variant)} ${className}`}
       onClick={onClick}
     >

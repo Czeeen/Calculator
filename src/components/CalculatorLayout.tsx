@@ -1,7 +1,5 @@
-import React from "react";
 import Screen from "./Screen";
 import Keypad from "./Keypad";
-import { keypadButtons } from "../config/keypadConfig";
 import { useCalculatorController } from "../hooks/useCalculatorController";
 
 const CalculatorLayout = () => {

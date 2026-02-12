@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from './Button';
 import { keypadButtons } from '../config/keypadConfig';
 
@@ -14,7 +13,7 @@ const colSpanClasses = {
 
 const Keypad = ({ onButtonClick }: KeypadProps) => {
   return (
-    <div className="grid grid-cols-5 gap-1 p-1">
+    <div className="grid grid-cols-5 gap-2 p-1">
       {keypadButtons.map(button => (
         <Button
           key={button.id}

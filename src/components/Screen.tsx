@@ -1,8 +1,7 @@
-import React from 'react';
-
 interface ScreenProps {
     value: string;
     previousValue: string;
+    hasMemory: boolean;
 }
 
 export default function Screen({ value, previousValue }: ScreenProps) {    
