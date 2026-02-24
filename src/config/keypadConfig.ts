@@ -6,6 +6,7 @@ export interface ButtonConfig {
     colSpan?: 1 | 2 | 3;
 }
 export const memoryButtons: ButtonConfig[] = [
+    
     {
         id: 'mc',
         label: 'MC',
