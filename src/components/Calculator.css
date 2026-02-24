@@ -1,0 +1,148 @@
+:root {
+    --calc-bg: #202020;
+    --text-primary: #ffffff;
+    --text-secondary: #666666;
+
+    --gap-main: 4px;
+    --gap-memory: 8px;
+    --padding-outer: 12px;
+
+    --memory-btn-text: #ffffff;
+    --memory-btn-disabled: #545454;
+    --memory-btn-hover-bg: #2d2d2d;
+    --memory-btn-hover-radius: 4px;
+
+    --btn-digit-bg: #3b3b3b;
+    --btn-digit-active: #323232;
+
+    --btn-operator-bg: #323232;
+    --btn-operator-active: #3c3c3c;
+
+    --btn-equals-bg: #595959;
+    --btn-equals-active: #535353;
+}
+
+.calculator-screen {
+    background-color: var(--calc-bg);
+    color: var(--text-primary);
+    padding: 20px 15px;
+    text-align: right;
+    border-radius: 8px 8px 0 0;
+}
+
+.calculator-keypad {
+    max-width: 320px;
+    margin: 0 auto;
+    padding: var(--padding-main);
+    background-color: var(--calc-bg);
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap-main);
+}
+
+.memory-panel {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap-memory);
+    padding: 8px 4px;
+    margin-bottom: var(--gap-main);
+}
+
+.memory-btn {
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+    color: var(--memory-btn-text);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 4px;
+    border-radius: var(--memory-btn-hover-radius);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.memory-btn:hover {
+    background-color: var(--memory-btn-hover-bg);
+    border-color: var(--memory-btn-hover-bg);
+}
+
+.memory-btn-disabled {
+    color: var(--memory-btn-disabled);
+    cursor: default;
+}
+
+.memory-btn-disabled:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* Цифры (1-9, 0, +/-, .) */
+.btn--digit {
+    background-color: var(--btn-digit-bg);
+    color: var(--text-primary);
+}
+
+.btn--digit:hover {
+    filter: brightness(1.1);
+}
+
+.btn--digit:active {
+    background-color: var(--btn-digit-active);
+    filter: brightness(1);
+}
+
+/* Операторы и действия (C, ⌫, %, /, *, -, +) */
+.btn--operator,
+.btn--action {
+    background-color: var(--btn-operator-bg);
+    color: var(--text-primary);
+}
+
+.btn--operator:hover,
+.btn--action:hover {
+    filter: brightness(1.1);
+}
+
+.btn--operator:active,
+.btn--action:active {
+    background-color: var(--btn-operator-active);
+    filter: brightness(1);
+}
+
+/* Кнопка равно (=) */
+.btn--equals {
+    background-color: var(--btn-equals-bg);
+    color: var(--text-primary);
+}
+
+.btn--equals:hover {
+    filter: brightness(1.1);
+}
+
+.btn--equals:active {
+    background-color: var(--btn-equals-active);
+    color: var(--text-primary);
+    filter: brightness(1);
+}

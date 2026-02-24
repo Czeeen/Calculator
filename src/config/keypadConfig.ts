@@ -5,14 +5,44 @@ export interface ButtonConfig {
     value: string;
     colSpan?: 1 | 2 | 3;
 }
-
-export const keypadButtons: ButtonConfig[] = [
+export const memoryButtons: ButtonConfig[] = [
     {
         id: 'mc',
         label: 'MC',
         type: 'action',
         value: 'mc'
     },
+
+    {
+        id: 'mr',
+        label: 'MR',
+        type: 'action',
+        value: 'mr'
+    },
+
+    {
+        id: 'm+',
+        label: 'M+',
+        type: 'action',
+        value: 'm+'
+    },
+
+    {
+        id: 'm-',
+        label: 'M-',
+        type: 'action',
+        value: 'm-'
+    },
+
+
+    {
+        id: 'ms',
+        label: 'MS',
+        type: 'action',
+        value: 'ms'
+    }
+]
+export const keypadButtons: ButtonConfig[] = [
 
     {
         id: 'clear',
@@ -43,14 +73,6 @@ export const keypadButtons: ButtonConfig[] = [
     },
 
     {
-        id: 'mr',
-        label: 'MR',
-        type: 'action',
-        value: 'mr'
-    },
-
-
-    {
         id: 'digit-7',
         label: '7',
         type: 'digit',
@@ -77,14 +99,6 @@ export const keypadButtons: ButtonConfig[] = [
         type: 'operator',
         value: '*',
     },
-
-    {
-        id: 'm+',
-        label: 'M+',
-        type: 'action',
-        value: 'm+'
-    },
-
 
     {
         id: 'digit-4',
@@ -115,14 +129,6 @@ export const keypadButtons: ButtonConfig[] = [
     },
 
     {
-        id: 'm-',
-        label: 'M-',
-        type: 'action',
-        value: 'm-'
-    },
-
-
-    {
         id: 'digit-1',
         label: '1',
         type: 'digit',
@@ -151,17 +157,9 @@ export const keypadButtons: ButtonConfig[] = [
     },
 
     {
-        id: 'ms',
-        label: 'MS',
-        type: 'action',
-        value: 'ms'
-    },
-
-
-    {
         id: 'sign',
         label: '±',
-        type: 'action',
+        type: 'digit',
         value: 'sign',
     },
 

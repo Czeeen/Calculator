@@ -4,13 +4,13 @@ interface ScreenProps {
     hasMemory: boolean;
 }
 
-export default function Screen({ value, previousValue }: ScreenProps) {    
+export default function Screen({ value, previousValue, hasMemory }: ScreenProps) {    
     return (
-        <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-t-lg p-4 w-full">
-            <div className="text-right text-gray-400 text-sm min-h-[1.5rem] mb-1">
+        <div className="calculator-screen">
+            <div className="screen-previous-value">
                 {previousValue}
             </div>
-            <div className="text-right text-white text-4xl font-light break-all w-full">
+            <div className="screen-current-value">
                 {value}
             </div>
         </div>

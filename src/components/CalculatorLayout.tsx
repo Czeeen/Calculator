@@ -1,5 +1,6 @@
 import Screen from "./Screen";
 import Keypad from "./Keypad";
+import './Calculator.css';
 import { useCalculatorController } from "../hooks/useCalculatorController";
 
 const CalculatorLayout = () => {
@@ -12,7 +13,9 @@ const CalculatorLayout = () => {
         previousValue={controller.previousValue} 
         hasMemory={controller.hasMemory}
       />
-      <Keypad onButtonClick={controller.handleButtonClick} />
+      <Keypad onButtonClick={controller.handleButtonClick} 
+       hasMemory={controller.hasMemory}
+       />
     </div>
   );
 };

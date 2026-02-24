@@ -7,18 +7,19 @@ interface ButtonProps {
   className?: string;
 }
 
-const getVariantClass = (variant?: string) => {
+// ✅ Маппинг variant в CSS классы (вместо Tailwind)
+const getVariantClass = (variant?: string): string => {
   switch (variant) {
     case 'operator':
-      return "bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white";
+      return 'btn btn--operator';
     case 'equals':
-      return "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white";
+      return 'btn btn--equals';
     case 'digit':
-      return "bg-gray-700 hover:bg-gray-600 active:bg-gray-800 text-white";
+      return 'btn btn--digit';
     case 'action':
-      return "bg-gray-500 hover:bg-gray-400 active:bg-gray-600 text-white";
+      return 'btn btn--action';
     default:
-      return 'bg-gray-500 hover:bg-gray-400 text-white';
+      return 'btn btn--action';
   }
 };
 
@@ -26,13 +27,12 @@ const Button: React.FC<ButtonProps> = ({
   children, 
   onClick, 
   variant, 
-  className 
+  className = '' 
 }) => {
   
   return (
     <button
-      className={`w-12 h-12 flex items-center justify-center rounded-lg font-semibold transition-all duration-200 shadow hover:shadow-md active:shadow-none
-                 ${getVariantClass(variant)} ${className}`}
+      className={`${getVariantClass(variant)} ${className}`}
       onClick={onClick}
     >
       {children}

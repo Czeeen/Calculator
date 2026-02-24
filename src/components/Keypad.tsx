@@ -1,29 +1,38 @@
 import Button from './Button';
-import { keypadButtons } from '../config/keypadConfig';
+import MemoryButton from './MemoryButton';
+import { keypadButtons, memoryButtons } from '../config/keypadConfig';
 
 interface KeypadProps {
   onButtonClick: (value: string) => void;
+  hasMemory: boolean;
 }
 
-const colSpanClasses = {
-    1: 'col-span-1',
-    2: 'col-span-2',
-    3: 'col-span-3'
-}
-
-const Keypad = ({ onButtonClick }: KeypadProps) => {
+const Keypad = ({ onButtonClick, hasMemory }: KeypadProps) => {
   return (
-    <div className="grid grid-cols-5 gap-2 p-1">
-      {keypadButtons.map(button => (
-        <Button
-          key={button.id}
-          onClick={() => onButtonClick(button.value)}
-          variant={button.type}
-          className={button.colSpan ? colSpanClasses[button.colSpan] : '' }
-        >
-          {button.label}
-        </Button>
-      ))}
+    <div className="calculator-keypad">
+      <div className="memory-panel">
+        {memoryButtons.map(button => (
+          <MemoryButton
+            key={button.id}
+            onClick={() => onButtonClick(button.value)}
+            disabled={!hasMemory && (button.id === 'mc' || button.id === 'mr')}
+          >
+            {button.label}
+          </MemoryButton>
+        ))}
+      </div>
+
+      <div className="main-grid">
+        {keypadButtons.map(button => (
+          <Button
+            key={button.id}
+            onClick={() => onButtonClick(button.value)}
+            variant={button.type}
+          >
+            {button.label}
+          </Button>
+        ))}
+      </div>
     </div>
   );
 };
