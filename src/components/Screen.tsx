@@ -4,7 +4,7 @@ interface ScreenProps {
     hasMemory: boolean;
 }
 
-export default function Screen({ value, previousValue, hasMemory }: ScreenProps) {    
+export default function Screen({ value, previousValue}: ScreenProps) {    
     return (
         <div className="calculator-screen">
             <div className="screen-previous-value">
