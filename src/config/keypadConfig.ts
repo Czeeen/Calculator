@@ -163,6 +163,7 @@ export const keypadButtons: ButtonConfig[] = [
         value: 'sign',
     },
 
+    
     {
         id: 'digit-0',
         label: '0',
